@@ -16,6 +16,7 @@ window.onscroll = function() {
     prevScrollPos = currentScrollPos;
 };
 
+//Declarando y guardando el array de negocios
 const negocios = [
   {
     id: 1,
@@ -57,6 +58,7 @@ const negocios = [
     }
   }
 ];
+localStorage.setItem('negocios', JSON.stringify(negocios));
 
 // Mostrando los negocios en la sección "negocios-afiliados"
 const contenedor = document.getElementById('negocios-afiliados');
@@ -79,3 +81,27 @@ function mostrarNegocios(negocios) {
 }
 // Mostrar todos los negocios al cargar la página
 mostrarNegocios(negocios);
+
+// Declaración del carrito y su almacenamiento en localStorage
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+function actualizarCarritoPrincipal() {
+    const cartCount = document.getElementById('cart-count');
+    const totalItems = carrito.reduce((total, negocio) => {
+        return total + negocio.productos.reduce((subtotal, producto) => subtotal + producto.cantidad, 0);
+    }, 0);
+    cartCount.textContent = totalItems;
+}
+
+localStorage.setItem('carrito', JSON.stringify(carrito));
+actualizarCarritoPrincipal();
+
+// Filtrar negocios en tiempo real según el texto ingresado
+searchInput.addEventListener('input', function() {
+    const texto = searchInput.value.toLowerCase();
+    const negociosFiltrados = negocios.filter(negocio =>
+        negocio.nombre.toLowerCase().includes(texto) || 
+        negocio.categorias.some(cat => cat.toLowerCase().includes(texto))
+    );
+    mostrarNegocios(negociosFiltrados);
+});

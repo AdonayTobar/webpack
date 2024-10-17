@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+        background: aliceblue;
+}
+.ocul {
+    display: none !important;
+}
+
+.menu-prin {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    transition: top 0.3s;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:aliceblue;
+    padding: 0.5rem 0 0 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    width: 10%;
+}
+
+.logo img {
+    width: 2.5rem;
+}
+
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+}
+
+#cart-count {
+    font-weight: bold;
+    color: #465362;
+    margin-bottom: -10px; /* Ajusta la separación entre el número y el ícono */
+    margin-left: 1.5rem;
+}
+.cart-link {
+    text-decoration: none;
+}
+
+.cart {
+    width: 40px;
+    height: 40px;
+}
+ .search-container {
+    width: 75%;
+    max-width: 20rem;
+    display: flex;
+    justify-content: center;
+}
+
+input#search {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #46536217;
+    border-radius: 16px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+    box-shadow: 0 4px 8px #46536218;
+    background-color: aliceblue;
+}
+
+input#search::placeholder {
+    color: #46536279;
+}
+
+input#search:focus {
+    border: 1px solid #46536262;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+
+
+
+
+/*CSS de lista de menu*/
+.lista-pro {
+    width: 100%;
+    display: flex;
+    overflow-x: auto; /* Para hacer que la lista sea desplazable horizontalmente */
+    scrollbar-width: none; /* Oculta el scroll en Firefox */
+    padding-top: 0rem;
+    background-color: aliceblue;
+    color:#465362;
+    border-bottom: 1px solid #46536246;
+}
+
+.lista-pro::-webkit-scrollbar {
+    display: none; /* Oculta el scroll en Chrome, Safari y Edge */
+}
+
+.item {
+    width: auto;
+    height: 2.3rem;
+    padding: 10px;
+    margin-right: 2px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.item:hover {
+    background-color: aliceblue;
+}
+
+
+/*Mostrando los negocios del array*/
+main {
+    margin-top: 7rem;
+}
+#negocios-afiliados {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+    gap: 20px; /* Espacio entre los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 20px;
+}
+
+.negocio {
+    width: 10rem;
+    height: 12.5rem;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; /* Añade un cursor de mano para indicar que es clicable */
+    border-radius: 1rem;
+}
+
+.negocio:hover {
+    transform: translateY(-10px); /* Efecto de levantamiento al hacer hover */
+    background-color: #f4fffd; /* Cambio de color en hover */
+}
+
+.negocio img {
+    width: 10rem;
+    height: auto;
+    border-radius: 5px;
+}
+
+.negocio h3 {
+    font-size: 18px;
+    color: #465362;
+}
+
+
+/*REsponsivo*/
+
+
+
+@media (max-width: 768px) {
+
+    /*Menu*/
+
+input#search {
+    width: 100%;
+}
+.cart-container img {
+    width: 2rem;
+}
+}
+
+
+
+
+
+
+
+@media (max-width: 450px) {
+
+    /*Menu*/
+.search{
+    width: 75%;
+    max-width: 13rem;
+}
+input#search {
+    width: 100%;
+}
+.cart-container img {
+    width: 1.5rem;
+}
+#negocios-afiliados {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+    gap: 10px; /* Espacio entre los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 10px;
+}
+.negocio {
+    width: 6rem;
+    height: 8rem;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; /* Añade un cursor de mano para indicar que es clicable */
+    border-radius: 1rem;
+}
+.negocio img {
+    width: 6rem;
+    height: auto;
+    border-radius: 5px;
+}
+.negocio h3 {
+    font-size: 0.8rem;
+    color: #465362;
+}
+#cart-count {
+    font-weight: bold;
+    color: #465362;
+    margin-bottom: -18px; /* Ajusta la separación entre el número y el ícono */
+    margin-left: 1.5rem;
+}
+}
+
+

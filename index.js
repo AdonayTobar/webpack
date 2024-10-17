@@ -69,10 +69,10 @@ function mostrarNegocios(negocios) {
         const negocioDiv = document.createElement('div');
         negocioDiv.className = 'negocio';
         negocioDiv.innerHTML = `
-            <img src="${negocio.logo}" alt="${negocio.nombre}" class="negocio-logo">
-            <h3>${negocio.nombre}</h3>
-            <p>Categorías: ${negocio.categorias.join(', ')}</p>
-            <a href="${negocio.url}" class="ver-mas">Ver más</a>
+            <div class="negocio" onclick="window.location.href='${negocio.url}'">
+                <img src="${negocio.logo}" alt="${negocio.nombre}">
+                <h3>${negocio.nombre}</h3>
+            </div>
         `;
         contenedor.appendChild(negocioDiv);
     });

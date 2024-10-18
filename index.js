@@ -66,12 +66,12 @@ const searchInput = document.getElementById('search'); // Input buscador
 
 // Función para mostrar todos los negocios en el contenedor
 function mostrarNegocios(negocios) {
-    contenedor.innerHTML = '';
+    contenedor.innerHTML = ''; // Limpiar contenedor
     negocios.forEach(negocio => {
         const negocioDiv = document.createElement('div');
         negocioDiv.className = 'negocio';
         negocioDiv.innerHTML = `
-            <div class="negocio" onclick="window.location.href='${negocio.url}'">
+            <div onclick="guardarNegocioYRedirigir(${negocio.id})">
                 <img src="${negocio.logo}" alt="${negocio.nombre}">
                 <h3>${negocio.nombre}</h3>
             </div>
@@ -79,8 +79,17 @@ function mostrarNegocios(negocios) {
         contenedor.appendChild(negocioDiv);
     });
 }
-// Mostrar todos los negocios al cargar la página
+
+// Función para guardar negocio seleccionado en localStorage y redirigir
+function guardarNegocioYRedirigir(idNegocio) {
+    const negocioSeleccionado = negocios.find(negocio => negocio.id === idNegocio);
+    localStorage.setItem('negocioSeleccionado', JSON.stringify(negocioSeleccionado));
+    window.location.href = '/Prueba/prueba.html'; // Redirigir a la página secundaria
+}
+
+// Llamar la función para mostrar los negocios
 mostrarNegocios(negocios);
+
 
 // Declaración del carrito y su almacenamiento en localStorage
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];

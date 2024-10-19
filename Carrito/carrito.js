@@ -93,7 +93,7 @@ let mensaje = '';
 let totalGeneral = 0;
 
 
-mensaje += `*PackSeguro Delivery*\n`;
+mensaje += `*PackSeguro Delivery*\n\n`;
 for (const [tiendaNombre, productos] of Object.entries(productosPorTienda)) {
     let totalTienda = productos.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
     totalGeneral += totalTienda; // Sumar el total de la tienda al total general
@@ -109,7 +109,7 @@ mensaje += `  Nombre: ${nombre}\n`;
 mensaje += `  Teléfono: ${telefono}\n`;
 mensaje += `  Ubicación: ${ubicacion}\n`;
 mensaje += `  Instrucciones adicionales: ${instrucciones}\n\n`;
-mensaje += `  Costo de Delivery: $0.00`;
+mensaje += `  Costo de Delivery: $0.00\n`;
 mensaje += `*Total General:* $${totalGeneral.toFixed(2)}\n\n`;
 mensaje += `*Los precios no incluyen delivery*`;
 

@@ -98,16 +98,16 @@ for (const [tiendaNombre, productos] of Object.entries(productosPorTienda)) {
     let totalTienda = productos.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
     totalGeneral += totalTienda; // Sumar el total de la tienda al total general
 
-    mensaje += `🛒 *${tiendaNombre}*\n`;
+    mensaje += `⚪ *${tiendaNombre}*\n`;
     mensaje += productos.map(item => `  - ${item.nombre} x${item.cantidad} - $${(item.precio * item.cantidad).toFixed(2)}`).join('\n') + `\n`;
     mensaje += `  *Sub-Total:* $${totalTienda.toFixed(2)}\n\n`;
 }
 
 // Añadir datos del cliente al mensaje final
 mensaje += `*Datos del cliente:*\n`;
-mensaje += `  👦: ${nombre}\n`;
-mensaje += `  📞: ${telefono}\n`;
-mensaje += `  🏍: ${ubicacion}\n`;
+mensaje += `  Nombre: ${nombre}\n`;
+mensaje += `  Teléfono: ${telefono}\n`;
+mensaje += `  Dirección: ${ubicacion}\n`;
 mensaje += `  Instrucciones adicionales: ${instrucciones}\n\n`;
 mensaje += ` Costo de Delivery: $0.00\n\n`;
 mensaje += `*Total General:* $${totalGeneral.toFixed(2)}\n\n`;

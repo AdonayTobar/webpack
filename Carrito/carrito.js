@@ -93,7 +93,7 @@ let mensaje = '';
 let totalGeneral = 0;
 
 
-mensaje += `*PackSeguro Delivery*\n\n`;
+mensaje += `    *PackSeguro Delivery*\n\n`;
 for (const [tiendaNombre, productos] of Object.entries(productosPorTienda)) {
     let totalTienda = productos.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
     totalGeneral += totalTienda; // Sumar el total de la tienda al total general
@@ -105,13 +105,13 @@ for (const [tiendaNombre, productos] of Object.entries(productosPorTienda)) {
 
 // Añadir datos del cliente al mensaje final
 mensaje += `*Datos del cliente:*\n`;
-mensaje += `  Nombre: ${nombre}\n`;
-mensaje += `  Teléfono: ${telefono}\n`;
-mensaje += `  Ubicación: ${ubicacion}\n`;
+mensaje += `  👦: ${nombre}\n`;
+mensaje += `  📞: ${telefono}\n`;
+mensaje += `  🏍: ${ubicacion}\n`;
 mensaje += `  Instrucciones adicionales: ${instrucciones}\n\n`;
-mensaje += `  Costo de Delivery: $0.00\n`;
+mensaje += ` Costo de Delivery: $0.00\n\n`;
 mensaje += `*Total General:* $${totalGeneral.toFixed(2)}\n\n`;
-mensaje += `*Los precios no incluyen delivery*`;
+mensaje += `*El costo de delivery lo pondrá nuestro agente de Call Center*`;
 
 const numeroWhatsApp = '72757591';
 const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;

@@ -92,11 +92,12 @@ document.getElementById('checkout-btn').addEventListener('click', () => {
 let mensaje = '';
 let totalGeneral = 0;
 
+
+mensaje += `*PackSeguro Delivery*\n`;
 for (const [tiendaNombre, productos] of Object.entries(productosPorTienda)) {
     let totalTienda = productos.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
     totalGeneral += totalTienda; // Sumar el total de la tienda al total general
 
-    mensaje += `🛒 *PackSeguro Delivery*\n`;
     mensaje += `🛒 *${tiendaNombre}*\n`;
     mensaje += productos.map(item => `  - ${item.nombre} x${item.cantidad} - $${(item.precio * item.cantidad).toFixed(2)}`).join('\n') + `\n`;
     mensaje += `  *Sub-Total:* $${totalTienda.toFixed(2)}\n\n`;
@@ -108,6 +109,7 @@ mensaje += `  Nombre: ${nombre}\n`;
 mensaje += `  Teléfono: ${telefono}\n`;
 mensaje += `  Ubicación: ${ubicacion}\n`;
 mensaje += `  Instrucciones adicionales: ${instrucciones}\n\n`;
+mensaje += `  Costo de Delivery: $0.00`;
 mensaje += `*Total General:* $${totalGeneral.toFixed(2)}\n\n`;
 mensaje += `*Los precios no incluyen delivery*`;
 

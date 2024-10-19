@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="carrito.css">
+</head>
+<body>
+  <header>
+    <h1>PackSeguro</h1>
+    <a href="/index.html" class="btn-back">Volver al Inicio</a>
+  </header>
+
+  <section id="cart-items">
+    <!-- Aquí se mostrarán los productos del carrito -->
+  </section>
+
+   <!-- Formulario para datos del cliente -->
+    <section class="datos-cli">
+        <h3>Detalles del cliente</h3>
+        <form id="order-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required><br>
+
+            <label for="telefono">Teléfono de contacto:</label>
+            <input type="tel" id="telefono" required><br>
+
+            <label for="ubicacion">Ubicación:</label>
+            <textarea id="ubicacion" required></textarea><br>
+
+            <label for="instrucciones">Instrucciones adicionales:</label>
+            <textarea id="instrucciones"></textarea><br>
+        </form>
+    </section>
+    
+
+  <footer>
+    <div id="cart-total">
+      <h2>Total: $<span id="total-price">0.00</span></h2>
+      <h3>Total no incluye delivery</h3>
+      <button type="button" id="checkout-btn">Finalizar Pedido</button>
+    </div>
+  </footer>
+  <script src="carrito.js"></script>
+</body>
+</html>

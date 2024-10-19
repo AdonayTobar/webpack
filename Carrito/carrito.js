@@ -89,22 +89,33 @@ document.getElementById('checkout-btn').addEventListener('click', () => {
   const productosPorTienda = agruparProductosPorTienda(carrito, negocios);
 
   // Crear el mensaje del pedido
-  let mensaje = '';
-  let mensajeFinal = '';
-  for (const [tiendaNombre, productos] of Object.entries(productosPorTienda)) {
+let mensaje = '';
+let totalGeneral = 0;
+
+for (const [tiendaNombre, productos] of Object.entries(productosPorTienda)) {
     let totalTienda = productos.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
-    mensaje += `Pedido para ${tiendaNombre}:\n`;
-    mensaje += productos.map(item => `${item.nombre} x${item.cantidad} - $${(item.precio * item.cantidad).toFixed(2)}`).join('\n');
-    mensaje += `\nTotal: $${totalTienda.toFixed(2)}\n\n`;
-  }
+    totalGeneral += totalTienda; // Sumar el total de la tienda al total general
 
-  // Añadir datos del cliente al mensaje final
-  mensajeFinal = `${mensaje}Datos del cliente:\nNombre: ${nombre}\nTeléfono: ${telefono}\nUbicación: ${ubicacion}\nInstrucciones adicionales: ${instrucciones}\n\n*Los precios no incluyen delivery*`;
+    mensaje += `🛒 **Pedido para:** ${tiendaNombre}\n`;
+    mensaje += productos.map(item => `  - ${item.nombre} x${item.cantidad} - $${(item.precio * item.cantidad).toFixed(2)}`).join('\n') + `\n`;
+    mensaje += `  **Total:** $${totalTienda.toFixed(2)}\n\n`;
+}
 
-  const numeroWhatsApp = '72757591';
-  const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeFinal)}`;
+// Añadir datos del cliente al mensaje final
+mensaje += `*Datos del cliente:*\n`;
+mensaje += `  Nombre: ${nombre}\n`;
+mensaje += `  Teléfono: ${telefono}\n`;
+mensaje += `  Ubicación: ${ubicacion}\n`;
+mensaje += `  Instrucciones adicionales: ${instrucciones}\n\n`;
+mensaje += `*Total General:* $${totalGeneral.toFixed(2)}\n\n`;
+mensaje += `*Los precios no incluyen delivery*`;
 
-  window.open(urlWhatsApp, '_blank');
+const numeroWhatsApp = '72757591';
+const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+// Abrir WhatsApp con el mensaje
+window.open(urlWhatsApp, '_blank');
+
 
   // Limpiar el carrito después de finalizar la compra
   carrito = [];

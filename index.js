@@ -58,19 +58,19 @@ const negocios = [
         { id: 3, nombre: 'Vaso grande, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/MixtasKaty.jpeg', precio: 4.50 }
       ],
       Mixtos: [
-        { id: 4, nombre: 'Vaso mediano, 2 Toping 1 Jalea', imagen: '/Dulce Tentacion/Fresas con crema.jpeg', precio: 4.25 },
-        { id: 5, nombre: 'Vaso grande, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/Fresas con crema.jpeg', precio: 5.00 }
+        { id: 4, nombre: 'Vaso mediano, 2 Toping 1 Jalea', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 4.25 },
+        { id: 5, nombre: 'Vaso grande, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 5.00 }
       ],
       Banana: [
         { id: 6, nombre: 'Banana Tentación', imagen: '/Dulce Tentacion/BananaTentacion.jpeg', precio: 2.50 },
       ],
       Otros: [
         { id: 7, nombre: 'Frutilla Loca', imagen: '/Dulce Tentacion/FrutillaLoca.jpeg', precio: 2.50 },
-        { id: 7, nombre: 'Nachos Diana Locos', imagen: '/Dulce Tentacion/NachosDianaLocos.jpeg', precio: 2.50 },
-        { id: 7, nombre: 'Nachos Diana Super Locos', imagen: '/Dulce Tentacion/NachosDianaSuper.jpeg', precio: 3.50 },
-        { id: 7, nombre: 'Hot Cheetos con queso chedar', imagen: '/Dulce Tentacion/HotCheetosQ.jpeg', precio: 2.75 },
-        { id: 7, nombre: 'Hot Cheetos con chile y queso chedar', imagen: '/Dulce Tentacion/HotCheetosC.jpeg', precio: 3.50 },
-        { id: 7, nombre: 'Nachos Diana con queso quedar', imagen: '/Dulce Tentacion/NachosDianaQ.jpeg', precio: 2.00 },
+        { id: 8, nombre: 'Nachos Diana Locos', imagen: '/Dulce Tentacion/NachosDianaLocos.jpeg', precio: 2.50 },
+        { id: 9, nombre: 'Nachos Diana Super Locos', imagen: '/Dulce Tentacion/NachosDianaSuper.jpeg', precio: 3.50 },
+        { id: 10, nombre: 'Hot Cheetos con queso chedar', imagen: '/Dulce Tentacion/HotCheetosQ.jpeg', precio: 2.75 },
+        { id: 11, nombre: 'Hot Cheetos con chile y queso chedar', imagen: '/Dulce Tentacion/HotCheetosC.jpeg', precio: 3.50 },
+        { id: 12, nombre: 'Nachos Diana con queso quedar', imagen: '/Dulce Tentacion/NachosDianaQ.jpeg', precio: 2.00 },
       ],
     }
   }

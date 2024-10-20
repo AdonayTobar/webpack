@@ -48,7 +48,7 @@ const negocios = [
   {
     id: 2,
     nombre: 'Dulce Tentación',
-    categorias: ['Postre'],
+    categorias: ['Postre','Boquitas', 'Fruta'],
     logo: '/Dulce Tentacion/LogoKaty.jpeg',
     url: '/Subway/subway.html',
     menu: {
@@ -80,21 +80,37 @@ localStorage.setItem('negocios', JSON.stringify(negocios));
 // Mostrando los negocios en la sección "negocios-afiliados"
 const contenedor = document.getElementById('negocios-afiliados');
 const searchInput = document.getElementById('search'); // Input buscador
+// Referencia al contenedor del formulario y al botón de mostrar/ocultar
+    const toggleFormButton = document.getElementById('mandado');
+    const mandaditoContainer = document.getElementById('mandaditoContainer');
+    const formulario = document.getElementById('mandaditoForm');
 
-// Función para mostrar todos los negocios en el contenedor
+// Función para mostrar negocios en el contenedor
 function mostrarNegocios(negocios) {
-    contenedor.innerHTML = ''; // Limpiar contenedor
-    negocios.forEach(negocio => {
-        const negocioDiv = document.createElement('div');
-        negocioDiv.className = 'negocio';
-        negocioDiv.innerHTML = `
-            <div onclick="guardarNegocioYRedirigir(${negocio.id})">
-                <img src="${negocio.logo}" alt="${negocio.nombre}">
-                <h3>${negocio.nombre}</h3>
-            </div>
-        `;
-        contenedor.appendChild(negocioDiv);
-    });
+  contenedor.innerHTML = ''; // Limpiar contenedor
+  negocios.forEach(negocio => {
+    const negocioDiv = document.createElement('div');
+    negocioDiv.className = 'negocio';
+    negocioDiv.innerHTML = `
+      <div onclick="guardarNegocioYRedirigir(${negocio.id})">
+        <img src="${negocio.logo}" alt="${negocio.nombre}">
+        <h3>${negocio.nombre}</h3>
+      </div>
+    `;
+    contenedor.appendChild(negocioDiv);
+  });
+}
+
+// Función para filtrar negocios por categoría
+function filtrarNegocios(categoria) {
+  const negociosFiltrados = categoria === 'Todos'
+    ? negocios // Mostrar todos si la categoría es "Todos"
+    : negocios.filter(negocio => negocio.categorias.includes(categoria));
+
+  mostrarNegocios(negociosFiltrados); // Mostrar los negocios filtrados
+    // Ocultar el formulario y mostrar el contenedor de negocios
+  mandaditoContainer.style.display = 'none';
+  contenedor.style.display = 'flex';
 }
 
 // Función para guardar negocio seleccionado en localStorage y redirigir
@@ -135,10 +151,7 @@ searchInput.addEventListener('input', function() {
 
 //Seccion del mandadito
 
-// Referencia al contenedor del formulario y al botón de mostrar/ocultar
-    const toggleFormButton = document.getElementById('mandado');
-    const mandaditoContainer = document.getElementById('mandaditoContainer');
-    const formulario = document.getElementById('mandaditoForm');
+
 
     // Mostrar u ocultar formulario y negocios afiliados
     toggleFormButton.addEventListener('click', () => {

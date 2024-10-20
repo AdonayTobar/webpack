@@ -26,7 +26,8 @@
             </div>
         </nav>
         <section class="lista-pro">
-            <div class="item" onclick="hacerAlgo(5)">Mandadito</div>
+            <div class="item" id="mandado">Mandadito</div>
+            <div class="item" onclick="hacerAlgo(1)">Todos</div>
             <div class="item" onclick="hacerAlgo(1)">Pupusas</div>
             <div class="item" onclick="hacerAlgo(2)">Pizza</div>
             <div class="item" onclick="hacerAlgo(3)">Pollo</div>
@@ -41,6 +42,27 @@
     <main>
         <div id="negocios-afiliados" class="afiliados"></div>
     </main>
+    <div class="form-container" id="mandaditoContainer">
+        <h2>Mandadito Especial</h2>
+        <form id="mandaditoForm">
+            <label for="nombre">Nombre del Cliente:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="72757591" pattern="[0-9]{8}" required>
+
+            <label for="direccion_origen">Dirección de Recogida:</label>
+            <input type="text" id="direccion_origen" name="direccion_origen" placeholder="¿Dónde recogemos?" required>
+
+            <label for="direccion_destino">Dirección de Entrega:</label>
+            <input type="text" id="direccion_destino" name="direccion_destino" placeholder="¿Dónde entregamos?" required>
+
+            <label for="descripcion">Descripción del Mandadito:</label>
+            <textarea id="descripcion" name="descripcion" rows="3" placeholder="Especifica tu mandadito..." required></textarea>
+
+            <button type="submit">Enviar Mandadito</button>
+        </form>
+    </div>
     
 
 

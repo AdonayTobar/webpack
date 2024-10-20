@@ -131,3 +131,40 @@ searchInput.addEventListener('input', function() {
     );
     mostrarNegocios(negociosFiltrados);
 });
+
+
+//Seccion del mandadito
+
+// Referencia al contenedor del formulario y al botón de mostrar/ocultar
+    const toggleFormButton = document.getElementById('mandado');
+    const mandaditoContainer = document.getElementById('mandaditoContainer');
+    const formulario = document.getElementById('mandaditoForm');
+
+    // Mostrar u ocultar formulario y negocios afiliados
+    toggleFormButton.addEventListener('click', () => {
+      const isFormVisible = mandaditoContainer.style.display === 'flex';
+      mandaditoContainer.style.display = isFormVisible ? 'none' : 'flex';
+      contenedor.style.display = isFormVisible ? 'flex' : 'none';
+    });
+
+    // Enviar el formulario a WhatsApp al hacer clic en Enviar Mandadito
+    formulario.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nombre = formulario.nombre.value;
+      const telefono = formulario.telefono.value;
+      const direccionOrigen = formulario.direccion_origen.value;
+      const direccionDestino = formulario.direccion_destino.value;
+      const descripcion = formulario.descripcion.value;
+
+      // Formatear el mensaje para WhatsApp
+      const mensaje = `Hola, soy ${nombre}. Necesito un mandadito especial:
+      🛍️ Origen: ${direccionOrigen}
+      📍 Destino: ${direccionDestino}
+      📄 Descripción: ${descripcion}
+      📲 Mi teléfono: ${telefono}`;
+
+      // Redirigir a WhatsApp
+      window.open(`https://wa.me/72757591?text=${encodeURIComponent(mensaje)}`);
+      formulario.reset(); // Limpiar el formulario después de enviar
+    });

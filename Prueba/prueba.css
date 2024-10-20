@@ -102,7 +102,7 @@ nav {
   margin: 20px;
 }
 .categoria-container h3 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
     margin: 1rem;
     color: #465362;
@@ -178,9 +178,8 @@ nav {
     margin: auto;
     display: block;
     width: 100%;
-    max-width: 500px;
-    max-height: 80%;
-    padding-top: 7rem;
+    height: auto;
+    padding-top: 5rem;
 }
 
 .close {

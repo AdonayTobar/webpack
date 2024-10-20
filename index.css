@@ -160,7 +160,7 @@ main {
 
 .negocio img {
     width: 10rem;
-    height: auto;
+    height: 10rem;
     border-radius: 5px;
 }
 
@@ -225,7 +225,7 @@ input#search {
 }
 .negocio img {
     width: 6rem;
-    height: auto;
+    height: 6rem;
     border-radius: 5px;
 }
 .negocio h3 {

@@ -58,8 +58,8 @@ const negocios = [
         { id: 3, nombre: 'Vaso grande, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/MixtasKaty.jpeg', precio: 4.50 }
       ],
       Mixtos: [
-        { id: 4, nombre: 'Vaso mediano, 2 Toping 1 Jalea', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 4.25 },
-        { id: 5, nombre: 'Vaso grande, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 5.00 }
+        { id: 4, nombre: 'Vaso mediano Mixto, 2 Toping 1 Jalea', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 4.25 },
+        { id: 5, nombre: 'Vaso grande Mixto, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 5.00 }
       ],
       Banana: [
         { id: 6, nombre: 'Banana Tentación', imagen: '/Dulce Tentacion/BananaTentacion.jpeg', precio: 2.50 },

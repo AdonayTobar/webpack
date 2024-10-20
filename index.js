@@ -53,13 +53,13 @@ const negocios = [
     url: '/Subway/subway.html',
     menu: {
       Fresas: [
-        { id: 1, nombre: 'Vaso pequeño,   1 Toping 1 Jalea', imagen: '/Dulce Tentacion/MixtasKaty.jpeg', precio: 2.00 },
-        { id: 2, nombre: 'Vaso mediano, 2 Toping 1 Jalea', imagen: '/Dulce Tentacion/MixtasKaty.jpeg', precio: 3.75 },
-        { id: 3, nombre: 'Vaso grande, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/MixtasKaty.jpeg', precio: 4.50 }
+        { id: 1, nombre: 'Fresa Vaso pequeño,   1 Toping 1 Jalea', imagen: '/Dulce Tentacion/MixtasKaty.jpeg', precio: 2.00 },
+        { id: 2, nombre: 'Fresa Vaso mediano, 2 Toping 1 Jalea', imagen: '/Dulce Tentacion/MixtasKaty.jpeg', precio: 3.75 },
+        { id: 3, nombre: 'Fresa Vaso grande, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/MixtasKaty.jpeg', precio: 4.50 }
       ],
       Mixtos: [
-        { id: 4, nombre: 'Vaso mediano Mixto, 2 Toping 1 Jalea', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 4.25 },
-        { id: 5, nombre: 'Vaso grande Mixto, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 5.00 }
+        { id: 4, nombre: 'Mixto Vaso mediano, 2 Toping 1 Jalea', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 4.25 },
+        { id: 5, nombre: 'Mixto Vaso grande, 2 Toping 2 Jaleas', imagen: '/Dulce Tentacion/Fresas con Crema.jpeg', precio: 5.00 }
       ],
       Banana: [
         { id: 6, nombre: 'Banana Tentación', imagen: '/Dulce Tentacion/BananaTentacion.jpeg', precio: 2.50 },
